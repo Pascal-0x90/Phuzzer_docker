@@ -9,6 +9,5 @@ before_install:
   - docker pull pascal0x90/basic_phuzzer:phuzzer
   - pip install travis-wait-improved
 
-deploy:
-  - provider: script
-    script: travis-wait-improved --timeout 5m ./run.sh
+script: 
+  - travis-wait-improved --timeout 5m ./run.sh
