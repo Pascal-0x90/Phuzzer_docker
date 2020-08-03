@@ -10,4 +10,4 @@ before_install:
 #  - pip install travis-wait-improved
 
 script: 
-  - ./run.sh
+  - ./run.sh chall.bin
