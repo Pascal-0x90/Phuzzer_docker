@@ -10,7 +10,9 @@ GIT_LOCATION=$2
 git clone $GIT_LOCATION harness 
 
 # Compile binary
-./harness/setup.sh /usr/local/bin/afl-unix/
+cd ./harness 
+./setup.sh /usr/local/bin/afl-unix/
+cd ../
 
 # Sets kernel options for AFL
 echo core > /proc/sys/kernel/core_pattern
