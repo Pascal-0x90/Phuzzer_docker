@@ -15,7 +15,6 @@ git clone $GIT_LOCATION harness
 # Sets kernel options for AFL
 echo core > /proc/sys/kernel/core_pattern
 echo 1 > /proc/sys/kernel/sched_child_runs_first
-echo performance | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
 
 # run
-python3 -m phuzzer -t 30 -c 4 -d 2 "$(pwd)/build/$binary"
+python3 -m phuzzer -t 30 -c 4 -d 2 "$(pwd)/harness/build/$binary"
