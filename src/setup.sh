@@ -11,3 +11,7 @@ git clone $GIT_LOCATION harness && cd harness
 
 # Start compilation
 gcc chall.bin.c -o ../build/chall.bin
+
+# Remove soruce
+cd ..
+rm -rf ./harness
