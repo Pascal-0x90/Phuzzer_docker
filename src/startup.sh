@@ -1,6 +1,8 @@
 #!/bin/bash
 
+# Take in name of binary
 binary=$1
+
 # Compile binary
 ./setup.sh /usr/local/bin/afl-unix
 
