@@ -10,4 +10,4 @@ before_install:
 #  - pip install travis-wait-improved
 
 script: 
-  - travis_wait 5 ./run.sh
+  - ./run.sh
