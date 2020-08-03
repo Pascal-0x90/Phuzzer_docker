@@ -7,7 +7,7 @@ GIT_LOCATION=$2
 mkdir build
 
 # Git clone and cd
-git clone GIT_LOCATION harness && cd harness
+git clone $GIT_LOCATION harness && cd harness
 
 # Start compilation
 gcc chall.bin.c -o ../build/chall.bin
