@@ -9,4 +9,4 @@ before_install:
   - docker pull pascal0x90/basic_phuzzer:phuzzer
 
 script:
-  - travis_wait 5 ./run.sh
+  - ls -la; ./run.sh
