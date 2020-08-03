@@ -6,7 +6,7 @@ services:
   - docker
 
 before_install:
-  - docker pull pascal0x90/basic_phuzzer:phuzzer
+  - docker pull pascal0x90/basic_phuzzer
 #  - pip install travis-wait-improved
 
 script: 
