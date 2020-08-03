@@ -3,8 +3,11 @@
 # Take in name of binary
 binary=$1
 
+# Take in git repo
+GIT_LOCATION=$2
+
 # Compile binary
-./setup.sh /usr/local/bin/afl-unix
+./setup.sh /usr/local/bin/afl-unix $GIT_LOCATION
 
 # Sets kernel options for AFL
 echo core > /proc/sys/kernel/core_pattern
