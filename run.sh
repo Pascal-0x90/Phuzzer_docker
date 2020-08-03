@@ -2,5 +2,5 @@
 
 docker run -u "root" --privileged \
     -v "$(pwd)/src:/phuzzui" \
-    -it phuzzer \
+    -it pascal0x90/basic_phuzzer:phuzzer \
     /bin/bash -c "cd /phuzzui && ./startup.sh"
