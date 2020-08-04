@@ -1,0 +1,25 @@
+diff --git a/phuzzer/phuzzers/__init__.py b/phuzzer/phuzzers/__init__.py
+index 57a66d1..a2e9e56 100644
+--- a/phuzzer/phuzzers/__init__.py
++++ b/phuzzer/phuzzers/__init__.py
+@@ -140,6 +140,7 @@ class Phuzzer:
+     #
+ 
+     def create_dictionary(self):
++        return []
+         l.warning("creating a dictionary of string references within target \"%s\"", self.target)
+ 
+         b = angr.Project(self.target, load_options={'auto_load_libs': False})
+diff --git a/phuzzer/phuzzers/afl.py b/phuzzer/phuzzers/afl.py
+index 68cc957..80d8556 100644
+--- a/phuzzer/phuzzers/afl.py
++++ b/phuzzer/phuzzers/afl.py
+@@ -23,7 +23,7 @@ class AFL(Phuzzer):
+         work_dir=None, seeds_dir=None, resume=False,
+         afl_count=1, memory="8G", timeout=None,
+         library_path=None, target_opts=None, extra_opts=None,
+-        crash_mode=False, use_qemu=True, fuzzer_name="fuzzer-master",
++        crash_mode=False, use_qemu=False, fuzzer_name="fuzzer-master",
+         run_timeout=None
+     ):
+         """
