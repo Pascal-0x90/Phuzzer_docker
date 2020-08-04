@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# fix python
+rm /usr/bin/python
+ln -s /usr/bin/python3 /usr/bin/python
+
 # Take in name of binary
 binary=$1
 
