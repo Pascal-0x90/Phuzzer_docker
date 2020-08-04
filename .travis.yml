@@ -10,4 +10,4 @@ before_install:
 #  - pip install travis-wait-improved
 
 script: 
-  - ./run.sh chall.bin
+  - ./run.sh single_byte_harness https://github.com/mahaloz/mavlink-afl-harness 
