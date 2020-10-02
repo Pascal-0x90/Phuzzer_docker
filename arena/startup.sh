@@ -15,12 +15,14 @@ git clone $GIT_LOCATION harness
 
 # Compile binary
 mkdir build
+cp setup.sh harness/.
 cd ./harness 
 ./setup.sh /phuzzers/AFLplusplus $binary
 cd ../
 
+cd /phuzzui
+
 # Remove soruce
-cd ..
 rm -rf ./harness
 
 # Sets kernel options for AFL
@@ -28,8 +30,10 @@ echo core > /proc/sys/kernel/core_pattern
 echo 1 > /proc/sys/kernel/sched_child_runs_first
 
 # Make working dir
-mkdir workdir
 mkdir seed_dir
+mkdir /phuzzer/workdir
 
 # run
-python3 -m phuzzer -p AFL++ -c 1 -s $(pwd)/seed_dir "$(pwd)/build/$binary"
+python3 -m phuzzer -p AFL++ -c 1 -w /phuzzui/workdir -s /phuzzui/seed_dir "/phuzzui/build/$binary"
+
+

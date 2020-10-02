@@ -16,3 +16,11 @@ docker pull pascal0x90/basic_phuzzer
 
 ## Dockerhub Image
 https://hub.docker.com/repository/docker/pascal0x90/basic_phuzzer?ref=login
+
+## Modifications
+To use this repo, follow the following process:
+* Modify the setup.sh script to compile your program to the build folder one level above the folder you clone into. 
+* Assure the target binary is called in the startup.sh file. 
+
+### Note
+The output of the fuzzer will be thrown into the `arena` folder. This will contain the fuzzer log as well as any crashes found. 

@@ -7,5 +7,5 @@ AFL_LOCATION=$1
 binary=$2
 
 # Start compilation
-$AFL_LOCATION/afl-clang-fast chall.bin.c -o ../build/$binary
+$AFL_LOCATION/afl-clang-fast chall.bin.c -o /phuzzui/build/$binary
 
