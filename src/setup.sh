@@ -1,17 +1,11 @@
 #!/bin/bash
 
+# This file should be in the root of the 
+# source of the project.  
+
 AFL_LOCATION=$1
-GIT_LOCATION=$2
-
-# Make sure there is a build dir
-mkdir build
-
-# Git clone and cd
-git clone $GIT_LOCATION harness && cd harness
+binary=$2
 
 # Start compilation
-gcc chall.bin.c -o ../build/chall.bin
+$AFL_LOCATION/afl-clang-fast chall.bin.c -o ../build/$binary
 
-# Remove soruce
-cd ..
-rm -rf ./harness
