@@ -36,4 +36,13 @@ mkdir /phuzzer/workdir
 # run
 python3 -m phuzzer -p AFL++ -c 1 -w /phuzzui/workdir -s /phuzzui/seed_dir "/phuzzui/build/$binary"
 
+# Consolidate everything
+mkdir run
+mv build run/.
+mv run_* run/.
+mv workdir run/.
+mv seed_dir run/.
+mv core run/.
 
+# Make everything readable since root created it
+chmod -R 777 /phuzzui/run
