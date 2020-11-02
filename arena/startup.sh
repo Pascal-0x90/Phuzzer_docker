@@ -29,19 +29,21 @@ rm -rf ./harness
 echo core > /proc/sys/kernel/core_pattern
 echo 1 > /proc/sys/kernel/sched_child_runs_first
 
-# Make working dir
-mkdir seed_dir
+# Make working dir and results dir
 mkdir /phuzzer/workdir
+mkdir run
 
 # run
-python3 -m phuzzer -p AFL++ -c 1 -w /phuzzui/workdir -s /phuzzui/seed_dir "/phuzzui/build/$binary"
+python3 -m phuzzer -p AFL++ -c 1 -w /phuzzui/workdir "/phuzzui/build/$binary"
+
+# if we wanna be cool and provide a seed dir just need to do the following
+#mkdir seed_dir
+#python3 -m phuzzer -p AFL++ -c 1 -w /phuzzui/workdir -s /phuzzui/seed_dir "/phuzzui/build/$binary"
+mv seed_dir run/.
 
 # Consolidate everything
-mkdir run
 mv build run/.
 mv run_* run/.
-mv workdir run/.
-mv seed_dir run/.
 mv core run/.
 
 # Make everything readable since root created it
