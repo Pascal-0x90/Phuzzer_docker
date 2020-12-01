@@ -32,12 +32,16 @@ class Observer:
                 self.repo = i.split(".")[0]
                 LOGGER.info(f"Set repo to {self.repo}")
         self.crash = CRASHPATH
+
     def init(self):
         '''Check if the crash file exists. wait if not.''' 
+        # Make sure our path is clear
+        assert os.path.exists(CRASHPATH) == False, "A crashes directory exists!!"
         LOGGER.info("Wait for the 'crashes' directory to exist...")
         while not os.path.exists(CRASHPATH):
             pass
         DEBUG.debug("Crashes directory has been found. Continuing.")
+    
     def observe(self):
         '''Begin observing the crash directory.'''
         seen = [] # This is the seen crash input files
@@ -90,7 +94,6 @@ def clone_repo():
     # Clone reg repo into this
     LOGGER.info("Cloning regression testing repo into regrepos dir.")
     os.system(f"cd {REGREPOS}; git clone {REGREPO}")
-
 
 # Make sure we are root
 check_root()
